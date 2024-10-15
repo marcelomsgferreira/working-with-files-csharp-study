@@ -1,0 +1,14 @@
+﻿using System;
+using System.IO;
+
+string arquivo = "meuArquivo.txt";
+
+if (File.Exists(arquivo))
+{
+    Console.WriteLine("O arquivo existe!");
+}
+else
+{
+    Console.WriteLine("O arquivo não existe.");
+}
+
