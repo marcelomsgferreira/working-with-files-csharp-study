@@ -1,14 +1,29 @@
-﻿using System;
-using System.IO;
+﻿string nomeArquivo = "eusouumarquivo.txt";
+string relPath = Path.Combine("E:/TI/DotNET/Linguagem/C#/EstudoLibs/WorkingWithFiles/WorkingWithFiles/WorkingWithFiles/Testes", nomeArquivo);
 
-string arquivo = "meuArquivo.txt";
+string textoASerInserido = "Eu sou um texto novo";
 
-if (File.Exists(arquivo))
+if (File.Exists(relPath))
 {
-    Console.WriteLine("O arquivo existe!");
+    Console.WriteLine("O Arquivo Existe");
+
+    FileInfo fileInfo = new FileInfo(relPath);
+    
+    Console.WriteLine("Caminho Completo: " + fileInfo.FullName);
+    Console.WriteLine("Nome do Arquivo: " + fileInfo.Name);
+    Console.WriteLine("Tamanho do Arquivo em Bytes: " + fileInfo.Length);
+    Console.WriteLine("Diretorio Pai: " + fileInfo.Directory);
+    Console.WriteLine("Extensão do Arquivo: " + fileInfo.Extension);
+
+    await File.AppendAllTextAsync(relPath, textoASerInserido);
+
+    Console.WriteLine("Texto Inserido");
+
+    string textoLido = await File.ReadAllTextAsync(relPath);
+
+    Console.WriteLine(textoLido);
 }
 else
 {
-    Console.WriteLine("O arquivo não existe.");
+    Console.WriteLine("Arquivo Não Encontrado");
 }
-

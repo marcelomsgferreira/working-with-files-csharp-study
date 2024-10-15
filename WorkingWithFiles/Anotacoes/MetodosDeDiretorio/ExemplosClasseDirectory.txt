@@ -1,0 +1,61 @@
+﻿string path = @"E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\Testes\";
+
+string[] files = Directory.GetFiles(path);
+
+foreach (string file in files)
+    Console.WriteLine(file);
+
+//string newDirPath = path + "Dir2";
+
+//Directory.CreateDirectory(newDirPath);
+
+//if (Directory.Exists(newDirPath))
+//{
+//    Console.WriteLine("DirExist");
+//}
+//else
+//{
+//    Console.WriteLine("Falha na croação do Dir");
+//}
+
+string[] dirs = Directory.GetDirectories(path);
+
+foreach (string dir in dirs) Console.WriteLine(dir);
+
+DateTime lastChange = Directory.GetLastWriteTime(path);
+
+Console.WriteLine(lastChange);
+
+//string destinationDirectory = path + @"NovoDir2\Dir2";
+//string sourceDirectory = path + "Dir2";
+
+//Directory.Move(sourceDirectory, destinationDirectory);
+
+//string deleteDir = path + @"NovoDir";
+
+//Directory.Delete(deleteDir, false);
+
+------------------------------------------------------------------
+
+string path = @"E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\Testes\";
+
+DirectoryInfo dir = new DirectoryInfo(path);
+
+if (dir.Exists) Console.WriteLine("Diretorio Existe");
+
+Console.WriteLine("Extension: " + dir.Extension);
+Console.WriteLine("Fullname: " + dir.FullName);
+Console.WriteLine("Name: " + dir.Name);
+Console.WriteLine("Root: " + dir.Root);
+
+dir.CreateSubdirectory("NewDir/Dir2");
+
+FileInfo[] files = dir.GetFiles();
+
+foreach (FileInfo file in files)
+{
+    Console.WriteLine("Name: " + file.Name);
+    Console.WriteLine("Path: " + file.DirectoryName);
+    Console.WriteLine("Extension: " + file.Extension);
+    Console.WriteLine("Length: " + file.Length);
+}

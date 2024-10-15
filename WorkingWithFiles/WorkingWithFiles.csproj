@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Anotacoes\MetodosDeDiretorio\" />
-    <Folder Include="Anotacoes\MetodosDePath\" />
-    <Folder Include="Anotacoes\MetodosDeStream\" />
+    <Folder Include="Testes\Dir\Dir2\" />
+    <Folder Include="Testes\NovoDir\" />
   </ItemGroup>
 
   <ItemGroup>

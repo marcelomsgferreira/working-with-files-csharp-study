@@ -50,3 +50,9 @@ OpenText 	Creates a StreamReader with UTF8 encoding that reads from an existing 
 OpenWrite 	Creates a write-only FileStream.
 Replace 	Replaces the contents of a specified file with the file described by the current FileInfo object, deleting the original file, and creating a backup of the replaced file.
 ToString 	Returns a path as string.
+
+Importante mencionar que a FileInfo possui também métodos para executar o Crud, entretanto é melhor utiliza-la apenas para 
+a especificação dos arquivos.
+
+Uma Observação importante é que a classe Fileinfo e File tem em boa parte as mesmas funções, entretanto a classe File é estática e consequentemente é mais fácil de ser utilizada porém menos Robusta
+A Classe File Info é uma classe orientada a objetos, ou seja, é menos prática contudo consegue executar mais métodos e ´=e mais robusta que a classe File;

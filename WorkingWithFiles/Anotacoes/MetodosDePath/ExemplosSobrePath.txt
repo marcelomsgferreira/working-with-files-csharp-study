@@ -1,0 +1,37 @@
+﻿string filePath = @"E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\Testes\TextFile1.txt";
+
+Console.WriteLine("FileName: " + Path.GetFileName(filePath));
+Console.WriteLine("FileNameWithoutExtension: " + Path.GetFileNameWithoutExtension(filePath));
+Console.WriteLine("DirectoryName: " + Path.GetDirectoryName(filePath));
+Console.WriteLine("Extension: " + Path.GetExtension(filePath));
+Console.WriteLine("FullPath: " + Path.GetFullPath(filePath));
+Console.WriteLine("RootPath: " + Path.GetPathRoot(filePath));
+
+Path.ChangeExtension(filePath, ".md");
+
+Console.WriteLine("Extension: " + Path.GetExtension(filePath));
+
+if (Path.IsPathRooted(filePath))
+{
+    Console.WriteLine("É A Root do Projeto");
+}
+else
+{
+    Console.WriteLine("Não é a root do Projeto");
+}
+
+if (Path.HasExtension(filePath))
+{
+    Console.WriteLine("Extension: " + Path.GetExtension(filePath));
+}
+else
+{
+    Console.WriteLine("Não possui extensão");
+}
+
+string path1 = @"C:\Documentos\Projetos";
+string path2 = @"ProjetosDeTi\Finanças";
+
+string completePath = Path.Combine(path1,path2);
+
+Console.WriteLine(completePath);

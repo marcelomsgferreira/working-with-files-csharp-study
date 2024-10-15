@@ -12,4 +12,4 @@ E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWi
 E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\obj\Debug\net8.0\WorkingWithFiles.pdb
 E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\obj\Debug\net8.0\WorkingWithFiles.genruntimeconfig.cache
 E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\obj\Debug\net8.0\ref\WorkingWithFiles.dll
-E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\bin\Debug\net8.0\Testes\eusouumarquivo.txt
+E:\TI\DotNET\Linguagem\C#\EstudoLibs\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles\obj\Debug\net8.0\WorkingWithFiles.sourcelink.json

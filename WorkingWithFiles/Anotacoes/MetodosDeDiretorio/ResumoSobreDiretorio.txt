@@ -1,0 +1,99 @@
+﻿A classe Directory apresenta métodos estátiscos para manipulação e CRUDs de Diretórios
+
+Os seus principais métodos são
+
+CreateDirectory(string path): Cria um novo diretório no caminho especificado. Se o diretório já existir, uma exceção será lançada.
+-----------------------------------------------
+DeleteDirectory(string path, bool recursive): Exclui um diretório. O parâmetro recursive indica se subdiretórios e arquivos dentro do diretório devem ser excluídos também.
+-----------------------------------------------
+Exists(string path): Verifica se um diretório existe. Retorna um valor booleano.
+-----------------------------------------------
+GetDirectories(string path, string searchPattern, SearchOption searchOption): Retorna uma matriz de strings contendo os nomes dos subdiretórios que correspondem ao padrão de pesquisa especificado. O parâmetro searchOption define se a pesquisa deve incluir subdiretórios.
+-----------------------------------------------
+GetFiles(string path, string searchPattern, SearchOption searchOption): Retorna uma matriz de strings contendo os nomes dos arquivos que correspondem ao padrão de pesquisa especificado. O parâmetro searchOption define se a pesquisa deve incluir subdiretórios.
+-----------------------------------------------
+GetLastWriteTime(string path): Obtém a data e hora da última vez que um diretório foi modificado.
+-----------------------------------------------
+Move(string sourceDirName, string destDirName): Move um diretório de um local para outro.
+-----------------------------------------------
+GetCurrentDirectory(): Obtém o caminho do diretório de trabalho atual.
+-----------------------------------------------
+SetCurrentDirectory(string path): Define o caminho do diretório de trabalho atual.
+
+Já a classe DirectoryInfo concede métodos para acessar as informações do diretório alguns destes são:
+
+Create(): Cria um novo diretório.
+-----------------------------------------------
+Delete(): Exclui um diretório.
+-----------------------------------------------
+Exists(): Verifica se o diretório existe.
+-----------------------------------------------
+GetDirectories(): Obtém uma coleção de objetos DirectoryInfo representando os subdiretórios do diretório atual.
+-----------------------------------------------
+GetFiles(): Obtém uma coleção de objetos FileInfo representando os arquivos do diretório atual.
+-----------------------------------------------
+GetFileSystemInfos(): Obtém uma coleção de objetos FileSystemInfo representando tanto arquivos quanto subdiretórios.
+-----------------------------------------------
+MoveTo(): Move o diretório para um novo local.
+-----------------------------------------------
+Refresh(): Recarrega as informações do diretório a partir do sistema de arquivos.
+-----------------------------------------------
+CreateSubdirectory(): Cria um novo subdiretório.
+
+A diferença principal entre Directory e DirectoryInfo, é que Directory é uma classe Estática com métodos estáticos, enquanto a classe Directoryinfo exige ser instanciada para utilização.
+Por ser uma classe estpática, Directory tem suas limitações, entretanto ainda é muito útil devido a sua praticidade.
+Jpá a classe DirectoryInhfo, é o oposto, muito robusta entretanto mais complexa de seexecutar.
+
+Segue um exemplo de como utilizar ambas:
+
+DirectoryInfo:
+
+            string caminhoDiretorio = @"C:\Temp\MeuDiretorio";
+
+            // Criar um objeto DirectoryInfo
+            DirectoryInfo di = new DirectoryInfo(caminhoDiretorio);
+
+            // Verificar se existe
+            if (di.Exists)
+            {
+                Console.WriteLine("O diretório existe.");
+
+                // Obter os subdiretórios
+                DirectoryInfo[] subdiretorios = di.GetDirectories();
+                foreach (DirectoryInfo subdir in subdiretorios)
+                {
+                    Console.WriteLine(subdir.FullName);
+                }
+
+                // Criar um novo subdiretório
+                di.CreateSubdirectory("NovoSubdiretorio");
+            }
+            else
+            {
+                Console.WriteLine("O diretório não existe.");
+            }
+
+Directory:
+
+            string caminhoDiretorio = @"C:\Temp\NovoDiretorio";
+
+            // Criar um novo diretório
+            Directory.CreateDirectory(caminhoDiretorio);
+            Console.WriteLine("Diretório criado com sucesso!");
+
+            // Verificar se existe
+            if (Directory.Exists(caminhoDiretorio))
+            {
+                Console.WriteLine("O diretório existe.");
+            }
+
+            // Obter os arquivos de um diretório
+            string[] arquivos = Directory.GetFiles(caminhoDiretorio, "*.txt");
+            foreach (string arquivo in arquivos)
+            {
+                Console.WriteLine(arquivo);
+            }
+
+            // Excluir o diretório (com cuidado!)
+            // Directory.Delete(caminhoDiretorio, true);
+        }

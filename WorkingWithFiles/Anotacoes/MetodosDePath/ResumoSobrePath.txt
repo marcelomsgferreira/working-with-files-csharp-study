@@ -1,0 +1,24 @@
+﻿A Classe Path é fundamental para a manipulação ddos caminhos dos arquivos e diretórios.
+Ela oferece um conjunto de métodos estáticos para esta função
+
+Princiapais métodos da Classe Path:
+
+GetFileName: Obtém o nome do arquivo (com a extensão).
+-------------------------------------------------------------------------
+GetFileNameWithoutExtension: Obtém o nome do arquivo sem a extensão.
+-------------------------------------------------------------------------
+GetDirectoryName: Obtém o nome do diretório pai.
+-------------------------------------------------------------------------
+GetExtension: Obtém a extensão do arquivo.
+-------------------------------------------------------------------------
+GetFullPath: Obtém o caminho completo de um arquivo ou diretório.
+-------------------------------------------------------------------------
+Combine: Combina dois ou mais caminhos.
+-------------------------------------------------------------------------
+IsPathRooted: Verifica se o caminho é absoluto (começa com a raiz).
+-------------------------------------------------------------------------
+GetPathRoot: Obtém a raiz do caminho.
+-------------------------------------------------------------------------
+HasExtension: Verifica se o caminho possui uma extensão.
+-------------------------------------------------------------------------
+ChangeExtension: Altera a extensão de um arquivo.

@@ -1,0 +1,17 @@
+﻿As streams nada mais são do que um conjunto sequencial de dados(exoressos em bytes) e a Classe Stream, é a classe
+base responsável por lidar com elas.
+
+Existem alguns tipos de stream e para isso foram criadas diversas subclasses dos mesmos;
+
+FileStream = works with bytes streams to write, read delete Files;
+MemoryStream = Trabalha com bytes que poderão ser salvos na memória;
+BufferedStream = Le dados de outras streams para melhorar as suas operações;
+NetworkStream = ler bytes voltados para um soquete de rede.
+PipeStream = Reads bytes from different processes
+CryptoStream = Serve para ligar as streams de forma criptografada
+
+
+Lembrando que todas essas derivam da classe base Stream menos a buferred.
+
+O FileStream é uma das classes mais utilizadas em C# para interagir com arquivos no sistema de arquivos. Ele permite realizar diversas operações, como leitura, escrita, busca e manipulação de metadados.
+
